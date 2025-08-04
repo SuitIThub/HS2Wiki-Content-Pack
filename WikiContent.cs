@@ -15,6 +15,7 @@ using UnityEngine;
 namespace HS2Wiki_Content;
 
 [BepInPlugin("com.suit.hs2wiki_content", "HS2 Wiki - Content Pack", "1.0.0")]
+[BepInProcess("StudioNEOV2")]
 [BepInDependency("com.suit.hs2wiki", BepInDependency.DependencyFlags.HardDependency)]
 public class WikiContent : BaseUnityPlugin
 {

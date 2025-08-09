@@ -10,6 +10,15 @@ This plugin provides additional content for the [HS2Wiki](https://github.com/Sui
 
 ## Currently Documented Plugins
 
+### StudioNeo
+
+Comprehensive documentation for StudioNeo with:
+- Detailed guides for all major features
+- Camera and object manipulation instructions
+- Complete menu reference
+- Animation and scene building tutorials
+- Visual guides with over 150 screenshots
+
 ### BetterPenetration
 
 Comprehensive documentation for the BetterPenetration plugin with:

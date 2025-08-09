@@ -5,12 +5,14 @@ namespace docs
 {
     public class VNGE
     {
-        private static Texture2D _image_1, _image_2, _image_3;
+        private const int IMAGE_COUNT = 3;
+        private static CustomTexture[] images;
 
         public static void Init() {
-            _image_1  = "VNGE/1.png".LoadTexture();
-            _image_2  = "VNGE/2.png".LoadTexture();
-            _image_3  = "VNGE/3.png".LoadTexture();
+            images = new CustomTexture[IMAGE_COUNT];
+            for (int i = 0; i < IMAGE_COUNT; i++) {
+                images[i] = new CustomTexture("VNGE/" + (i + 1) + ".png");
+            }
 
             WikiContent.RegisterWikiPage("VNGE", "Installation", Installation);
             WikiContent.RegisterWikiPage("VNGE", "Troubleshooting", Troubleshooting);
@@ -24,8 +26,7 @@ namespace docs
                 "    2. Unpack it to game root folder\n" +
                 "    3. Run Studio. If you correctly installed you'll see VNGE button in toolbar. Press it to start.");
 
-            if (_image_1 != null)
-                GUILayout.Box(_image_1, GUILayout.Width(340), GUILayout.Height(467));
+            images.Show(0);
 
             GUILayout.Space(10);
         }
@@ -43,8 +44,7 @@ namespace docs
             GUILayout.Label("If you experience other problem or errors, please, toggle on Console to see detailed information.\n\n" +
                 "To toggle on change settings:");
 
-            if (_image_2 != null)
-                GUILayout.Box(_image_2, GUILayout.Width(714), GUILayout.Height(475));
+            images.Show(1);
 
             GUILayout.Label("or\n" +
                 "    1. In Console/Lib/vngameengine.ini:\n" +
@@ -53,8 +53,7 @@ namespace docs
                 "       a. ShowAtStartup=1\n\n" +
                 "After start you must see something like this:");
 
-            if (_image_3 != null)
-                GUILayout.Box(_image_3, GUILayout.Width(715), GUILayout.Height(467));
+            images.Show(2);
 
             GUILayout.Label("Additional error information will be shown in Console.");
 

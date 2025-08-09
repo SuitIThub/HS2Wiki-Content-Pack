@@ -32,24 +32,36 @@ public class WikiContent : BaseUnityPlugin
         VNGE.Init();
     }
 
+    private static object apiInstance {
+        get{
+            Type wikiPluginType = Type.GetType("HS2Wiki.WikiPlugin, HS2Wiki");
+            if (wikiPluginType == null)
+            {
+                Logger.LogWarning("Wiki plugin not found - registration skipped.");
+                return null;
+            }
+
+            // Try to find the PublicAPI field
+            FieldInfo apiField = wikiPluginType.GetField("PublicAPI", BindingFlags.Public | BindingFlags.Static);
+            if (apiField == null)
+            {
+                Logger.LogWarning("Wiki API field not found - registration skipped.");
+                return null;
+            }
+
+            object apiInstance = apiField.GetValue(null);
+            if (apiInstance == null)
+            {
+                Logger.LogWarning("Wiki API is null - registration skipped.");
+                return null;
+            }
+            return apiInstance;
+        }
+    }
+
     public static void RegisterWikiPage(string category, string pageName, Action drawPageAction)
     {
-        Type wikiPluginType = Type.GetType("HS2Wiki.WikiPlugin, HS2Wiki");
-        if (wikiPluginType == null)
-        {
-            Logger.LogWarning("Wiki plugin not found - registration skipped.");
-            return;
-        }
-
-        // Try to find the PublicAPI field
-        FieldInfo apiField = wikiPluginType.GetField("PublicAPI", BindingFlags.Public | BindingFlags.Static);
-        if (apiField == null)
-        {
-            Logger.LogWarning("Wiki API field not found - registration skipped.");
-            return;
-        }
-
-        object apiInstance = apiField.GetValue(null);
+        object apiInstance = WikiContent.apiInstance;
         if (apiInstance == null)
         {
             Logger.LogWarning("Wiki API is null - registration skipped.");
@@ -57,9 +69,9 @@ public class WikiContent : BaseUnityPlugin
         }
 
         // Try to find the RegisterPage method
-        MethodInfo registerPageMethod = apiInstance.GetType().GetMethod("RegisterPage", new[] {
+        MethodInfo registerPageMethod = apiInstance.GetType().GetMethod("RegisterPage", [
             typeof(string), typeof(string), typeof(Action)
-        });
+        ]);
 
         if (registerPageMethod == null)
         {
@@ -68,12 +80,64 @@ public class WikiContent : BaseUnityPlugin
         }
 
         // Call up RegisterPage
-        registerPageMethod.Invoke(apiInstance, new object[] {
+        registerPageMethod.Invoke(apiInstance, [
             category,
             pageName,
             drawPageAction
-        });
+        ]);
 
         Logger.LogInfo("Page successfully registered with the wiki.");
+    }
+
+    public static void OpenWikiPage(string category, string pageName)
+    {
+        object apiInstance = WikiContent.apiInstance;
+        if (apiInstance == null)
+        {
+            Logger.LogWarning("Wiki API is null - registration skipped.");
+            return;
+        }
+
+        // Try to find the RegisterPage method
+        MethodInfo registerPageMethod = apiInstance.GetType().GetMethod("OpenPage", [
+            typeof(string), typeof(string)
+        ]);
+
+        if (registerPageMethod == null)
+        {
+            Logger.LogWarning("OpenPage method not found.");
+            return;
+        }
+
+        // Call up OpenPage
+        registerPageMethod.Invoke(apiInstance, [
+            category,
+            pageName
+        ]);
+
+        Logger.LogInfo("Page successfully registered with the wiki.");
+    }
+
+    
+    public static void OpenImagePage(string imagePath)
+    {
+        object apiInstance = WikiContent.apiInstance;
+        if (apiInstance == null)
+        {
+            Logger.LogWarning("Wiki API is null - registration skipped.");
+            return;
+        }
+
+        // Try to find the OpenImage method
+        MethodInfo registerPageMethod = apiInstance.GetType().GetMethod("OpenImage", [typeof(string)]);
+
+        if (registerPageMethod == null)
+        {
+            Logger.LogWarning("OpenImage method not found.");
+            return;
+        }
+
+        // Call up OpenImage
+        registerPageMethod.Invoke(apiInstance, [imagePath]);
     }
 }

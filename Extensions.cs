@@ -6,17 +6,17 @@ namespace HS2Wiki_Content
 {
     public static class Extensions
     {
-        public static Texture2D LoadTexture(this string path)
-        {
-            string imagePath = Path.Combine(Paths.PluginPath, "HS2Wiki", path);
-            Texture2D image = null;
-            if (File.Exists(imagePath))
+        public static void Show(this CustomTexture[] images, int index) {
+            if (images.Length > index)
+                Show(images[index]);
+        }
+
+        public static void Show(this CustomTexture image) {
+            if (image != null && image.texture != null)
             {
-                byte[] data = File.ReadAllBytes(imagePath);
-                image = new Texture2D(2, 2);
-                image.LoadImage(data);
+                if (GUILayout.Button(image.texture, GUI.skin.box, GUILayout.Width(image.width), GUILayout.Height(image.height)))
+                    WikiContent.OpenImagePage(image.path);
             }
-            return image;
         }
     }
 }

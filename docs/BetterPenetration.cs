@@ -5,22 +5,14 @@ namespace docs
 {
     public class BetterPenetration
     {
-        private static Texture2D _image_1, _image_2, _image_3, _image_4, _image_5, _image_6, _image_7, _image_8, _image_9, _image_10, _image_11, _image_12, _image_13;
+        private static CustomTexture[] images;
+        private const int IMAGE_COUNT = 13;
 
         public static void Init() {
-            _image_1  = "BetterPenetration/1.png".LoadTexture();
-            _image_2  = "BetterPenetration/2.png".LoadTexture();
-            _image_3  = "BetterPenetration/3.png".LoadTexture();
-            _image_4  = "BetterPenetration/4.png".LoadTexture();
-            _image_5  = "BetterPenetration/5.png".LoadTexture();
-            _image_6  = "BetterPenetration/6.png".LoadTexture();
-            _image_7  = "BetterPenetration/7.png".LoadTexture();
-            _image_8  = "BetterPenetration/8.png".LoadTexture();
-            _image_9  = "BetterPenetration/9.png".LoadTexture();
-            _image_10 = "BetterPenetration/10.png".LoadTexture();
-            _image_11 = "BetterPenetration/11.png".LoadTexture();
-            _image_12 = "BetterPenetration/12.png".LoadTexture();
-            _image_13 = "BetterPenetration/13.png".LoadTexture();
+            images = new CustomTexture[IMAGE_COUNT];
+            for (int i = 0; i < IMAGE_COUNT; i++) {
+                images[i] = new CustomTexture("BetterPenetration/" + (i + 1) + ".png");
+            }
 
             WikiContent.RegisterWikiPage("BetterPenetration", "Instructions", Instructions);
             WikiContent.RegisterWikiPage("BetterPenetration", "FAQ", FAQ);
@@ -74,8 +66,7 @@ namespace docs
             GUILayout.Label("First make sure that you have are requirement correctly installed (see above).\n" +
                 "Next make sure that you have a BP penis uncensor selected for the male (or futa) and a BP vagina uncensor selected for the female.");
 
-            if (_image_1 != null)
-                GUILayout.Box(_image_1, GUILayout.Width(477), GUILayout.Height(274));
+            images.Show(0);
 
             GUILayout.Space(10);
 
@@ -99,8 +90,7 @@ namespace docs
     	        "    e) Select <b>cf_J_Vagina_root</b>\n" +
     	        "    f) Select Set as parent");
 
-            if (_image_2 != null)
-                GUILayout.Box(_image_2, GUILayout.Width(716), GUILayout.Height(567));
+            images.Show(1);
 
             GUILayout.Label(
     	        "    g) Select male character in workspace\n" +
@@ -110,8 +100,7 @@ namespace docs
     	        "    k) Select Link position\n" +
     	        "    l) Select Add new");
 
-            if (_image_3 != null)
-                GUILayout.Box(_image_3, GUILayout.Width(714), GUILayout.Height(569));
+            images.Show(2);
 
             GUILayout.Space(10);
 
@@ -121,16 +110,13 @@ namespace docs
                 "This can be accomplished by parenting the <b>k_f_dan_end</b> bone to an internal bone such as <b>cf_J_Spine02</b>.\n\n" +
                 "Follow the same instructions above but substitute <b>cf_J_Spine02</b> for <b>cf_J_Vagina_root</b> and <b>k_f_dan_end</b> for <b>k_f_dan_start</b>");
 
-            if (_image_4 != null)
-                GUILayout.Box(_image_4, GUILayout.Width(713), GUILayout.Height(610));
+            images.Show(3);
 
             GUILayout.Label("<size=15>Without <b>k_f_dan_end</b> parented</size>");
-            if (_image_5 != null)
-                GUILayout.Box(_image_5, GUILayout.Width(712), GUILayout.Height(321));
+            images.Show(4);
 
             GUILayout.Label("<size=15>With <b>k_f_dan_end</b> parented</size>");
-            if (_image_6 != null)
-                GUILayout.Box(_image_6, GUILayout.Width(711), GUILayout.Height(416));
+            images.Show(5);
         }
     
         public static void FAQ() {
@@ -170,8 +156,7 @@ namespace docs
                 "    2) If your uncensor is Default, then a different might get selected as your uncensor. Open Plugin settings and exclude the other uncensors\n" +
                 "    3) Alternatively set one of the BP uncensors as your default");
 
-            if (_image_7 != null)
-                GUILayout.Box(_image_7, GUILayout.Width(697), GUILayout.Height(235));
+            images.Show(7);
 
             GUILayout.Space(10);
 
@@ -181,8 +166,7 @@ namespace docs
                 "    2) If your uncensor is Default, then SAC Sausage might get selected as your uncensor. Open Plugin settings and exclude SAC Sausage\n" +
                 "    3) Alternatively set one of the other penis uncensors as your default");
 
-            if (_image_8 != null)
-                GUILayout.Box(_image_8, GUILayout.Width(697), GUILayout.Height(260));
+            images.Show(8);
 
             GUILayout.Space(10);
 
@@ -194,16 +178,14 @@ namespace docs
                 "but its better to make the adjustment to the character.\n\n" +
                 "I make it a habit to make this adjustment on every girl I use.");
 
-            if (_image_9 != null)
-                GUILayout.Box(_image_9, GUILayout.Width(617), GUILayout.Height(372));
+            images.Show(9);
 
             GUILayout.Space(10);
 
             GUILayout.Label("<size=20>How do I open the Advanced Bone Slider to make these adjustments?</size>");
             GUILayout.Label("In the Character Editor, bottom right, click the Advanced Bone Slider button");
 
-            if (_image_10 != null)
-                GUILayout.Box(_image_10, GUILayout.Width(436), GUILayout.Height(242));
+            images.Show(10);
 
             GUILayout.Space(10);
 
@@ -213,10 +195,8 @@ namespace docs
                 "These clipping issues can usually be solved by making adjustments to the character. Search for the <b>cf_J_Siri_s_L</b> / <b>cf_J_Siri_s_R</b> bones. " +
                 "An Offset to the X coordinate will usually fix the clipping.");
 
-            if (_image_11 != null)
-                GUILayout.Box(_image_11, GUILayout.Width(713), GUILayout.Height(227));
-            if (_image_12 != null)
-                GUILayout.Box(_image_12, GUILayout.Width(714), GUILayout.Height(223));
+            images.Show(11);
+            images.Show(12);
 
             GUILayout.Space(10);
 
@@ -231,8 +211,7 @@ namespace docs
                 "    5) Select <b>cm_J_dan_f_top</b> to adjust the sack.\n" +
                 "    6) Use Scale X/Y/Z to adjust sack size.");
 
-            if (_image_13 != null)
-                GUILayout.Box(_image_13, GUILayout.Width(587), GUILayout.Height(708));
+            images.Show(13);
         }
     }
 

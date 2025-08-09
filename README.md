@@ -1,5 +1,14 @@
 # HS2Wiki Content Pack
 
+[![Latest Release](https://img.shields.io/github/v/release/SuitIThub/HS2Wiki-Content-Pack?label=Latest%20Release&style=flat-square)](https://github.com/SuitIThub/HS2Wiki-Content-Pack/releases/latest)
+[![HS2Wiki](https://img.shields.io/badge/HS2Wiki-Required-blue?style=flat-square)](https://github.com/SuitIThub/HS2Wiki)
+[![StudioNeoV2](https://img.shields.io/badge/StudioNeoV2-Supported-success?style=flat-square)](https://github.com/SuitIThub/HS2Wiki-Content-Pack)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/SuitIThub/HS2Wiki-Content-Pack/LICENSE)
+
+[![Documentation: StudioNeo](https://img.shields.io/badge/Documentation-StudioNeo-green?style=flat-square)](https://github.com/SuitIThub/HS2Wiki-Content-Pack?tab=readme-ov-file#studioneo)
+[![Documentation: BetterPenetration](https://img.shields.io/badge/Documentation-BetterPenetration-green?style=flat-square)](https://github.com/SuitIThub/HS2Wiki-Content-Pack?tab=readme-ov-file#betterpenetration)
+[![Documentation: VNGE](https://img.shields.io/badge/Documentation-VNGE-green?style=flat-square)](https://github.com/SuitIThub/HS2Wiki-Content-Pack?tab=readme-ov-file#vnge-visual-novel-game-engine)
+
 This plugin provides additional content for the [HS2Wiki](https://github.com/SuitIThub/HS2Wiki) system, adding helpful documentation for various plugins in an easy-to-access in-game format.
 
 ## Features

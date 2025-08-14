@@ -45,18 +45,18 @@ namespace docs {
             WikiContent.RegisterWikiPage("StudioNeo/Menu/System", "Screen effect", MenuSystemEffect);
             WikiContent.RegisterWikiPage("StudioNeo/Menu/System", "Save/Load", MenuSystemSaveLoad);
             WikiContent.RegisterWikiPage("StudioNeo/Menu/System", "Scene initialization, studio closure", MenuSystemClose);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Workspace", Workspace);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Rename Folder", WorkspaceFolder);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Item Camera", WorkspaceCamera);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Multiple selection", WorkspaceMultiple);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Range selection", WorkspaceRange);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "Copy", WorkspaceCopy);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace/Relation", "Parent-Child relationship", WorkspaceRelation);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace/Relation", "Example with Button", WorkspaceRelationButton);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace/Relation", "Example with Key", WorkspaceRelationKey);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace/Route", "Route", WorkspaceRoute);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace/Route", "Example", WorkspaceRouteExample);
-            WikiContent.RegisterWikiPage("StudioNeo/Menu/Workspace", "H Scene", HScene);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Workspace", Workspace);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Rename Folder", WorkspaceFolder);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Item Camera", WorkspaceCamera);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Multiple selection", WorkspaceMultiple);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Range selection", WorkspaceRange);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "Copy", WorkspaceCopy);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace/Relation", "Parent-Child relationship", WorkspaceRelation);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace/Relation", "Example with Button", WorkspaceRelationButton);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace/Relation", "Example with Key", WorkspaceRelationKey);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace/Route", "Route", WorkspaceRoute);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace/Route", "Example", WorkspaceRouteExample);
+            WikiContent.RegisterWikiPage("StudioNeo/Workspace", "H Scene", HScene);
 
         }   
 

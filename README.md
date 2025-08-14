@@ -47,7 +47,7 @@ Complete documentation for the VNGE plugin including:
 
 1. Make sure you have [BepInEx](https://github.com/BepInEx/BepInEx) installed
 2. Install the [HS2Wiki](https://github.com/SuitIThub/HS2Wiki) plugin
-3. Download the latest release of this content pack
+3. Download the [Latest Release](https://github.com/SuitIThub/HS2Wiki-Content-Pack/releases/latest) of this content pack
 4. Extract the zip file into your game directory, ensuring the files go into the `BepInEx/plugins/HS2Wiki` folder
 
 ## Usage
